@@ -1,6 +1,6 @@
-#Product list project
+# Product list project
 
-#Objective
+# Objective
 The Objective of this #asessment is to work with ReST API's , understand asynchronous programming and build interactive web pages using Javascript.
 
 ## Instructions

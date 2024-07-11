@@ -14,7 +14,7 @@ const getProducts=()=>
        }
     }).then(Response=>
     {
-        console.log(Response);
+      
         productItem=Response;
         createProductList();
     }
@@ -69,7 +69,7 @@ const getSaveForLater=() =>{
            }
         }).then(Response=>
         {
-            console.log(Response);
+         
             favourites=Response;
             createSaveforlaterList();
         }
@@ -109,7 +109,7 @@ const createSaveforlaterList =() =>{
 const addsaveforlater=(id) =>
 {
  if(!isProductAlreadyInSaveforlaterlist(id)){
-    console.log("Its true")
+   
     let productObject = getProductById(id)
     {   
         console.log(productObject);
@@ -131,7 +131,7 @@ const addsaveforlater=(id) =>
         }
         else
          { 
-            return Promise.reject("movie is already there in fav section")
+            return Promise.reject("product is already there in Saveforlater")
          }
         
         }).then((Result)=> 
@@ -146,7 +146,7 @@ const addsaveforlater=(id) =>
 }
     else 
     {
-alert("movie is already there in fav section");
+alert("product is already there in saveforlater");
     }
 
     
@@ -158,7 +158,7 @@ alert("movie is already there in fav section");
 
 const isProductAlreadyInSaveforlaterlist=(id) =>
 {
-    alert("isProductAlreadyInSaveforlaterlist" +id)
+    
     for(let fav in favourites)
         {
             if(id== favourites[fav].id)
@@ -197,13 +197,13 @@ const deletefromsaveforlater = (id) =>
                 }
             }).then(response=>
             {
-               alert("rec deleted from fav")
-                favourites=response;
+               alert("product deleted from fav")
+                 favourites = favourites.filter(product => product.id !== id);
                 createSaveforlaterList();
             }
             ).catch(error=>
             {
-          alert(error);
+          alert("error");
             })
         }
 
